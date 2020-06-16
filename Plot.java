@@ -7,11 +7,10 @@ import javax.swing.*;
 public class Plot extends JFrame {
 
     /**
-     *
+     * Gustavo Steinhofel e Fernando J. Schmatz
      */
     private static final long serialVersionUID = 1L;
-    
-    
+        
     public class TorreTelefone
     {
         //Usado para ordenação final
@@ -79,7 +78,7 @@ public class Plot extends JFrame {
             pcomp.addPoint(Color.BLUE, (telefones.get(i).x * cordX), (telefones.get(i).y * cordY));
         }
 
-        // calculo
+        // calculo Manhattan
         for (Telefone tele : telefones) {
             double comp = 0;
             for (Torre torre : torres) {
@@ -92,6 +91,7 @@ public class Plot extends JFrame {
                     comp = resp;
                     mapFoneIdTorre.replace(tele.nome, torre.id);
                 }
+                
             }
         }
 
@@ -108,10 +108,9 @@ public class Plot extends JFrame {
         });    
         Collections.sort(arrayT, new SortByTorre());
 
-        
+        //imprime torre telefone 
         for (TorreTelefone p : arrayT) {
-            System.out.println("Torre -> "+p.idTorre+" | Fone -> "+p.nameCel);
-            
+            System.out.println("Torre -> "+p.idTorre+" | Fone -> "+p.nameCel);            
         }
 
         // TELA
